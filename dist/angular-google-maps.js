@@ -6457,6 +6457,9 @@ Original idea from: http://stackoverflow.com/questions/22758950/google-map-drawi
               scope.$watch('center', function(newValue, oldValue) {
                 var coords, settingCenterFromScope;
                 if (newValue === oldValue || settingFromDirective) {
+                  if (settingFromDirective) {
+                    console.log("@@@@@@@@@@@@@@@@@@@@@@@ " + (JSON.stringify(scope.center, null, 2)));
+                  }
                   return;
                 }
                 coords = _this.getCoords(scope.center);
